@@ -230,7 +230,7 @@ public class StreamDeck implements IStreamDeck
             if (listeners.isEmpty() && keyListenTask != null)
             {
                 isListening = false;
-                keyListenTask.setDaemon(false);
+                // illegal on a running thread - keyListenTask.setDaemon(false);
                 keyListenTask = null;
             }
         }
