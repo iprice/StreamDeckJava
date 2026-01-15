@@ -2,7 +2,7 @@ package uk.co.cloudhunter.streamdeckjava;
 
 import org.hid4java.HidDevice;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -209,8 +209,7 @@ public class StreamDeck implements IStreamDeck
             if (keyListenTask == null)
             {
                 isListening = true;
-                keyListenTask = new Thread(new KeyListenTask());
-                keyListenTask.setName("StreamDeck key listener");
+                keyListenTask = new Thread(new KeyListenTask(),"StreamDeck key listener");
                 keyListenTask.setDaemon(true);
                 keyListenTask.start();
             }
